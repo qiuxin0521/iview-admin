@@ -17,11 +17,13 @@ export default {
 }
 html,body{
   .size;
-  overflow: hidden;
+  overflow: auto;
   margin: 0;
   padding: 0;
 }
 #app {
   .size;
+  min-width: 1366px;
+  min-height: 768px;
 }
 </style>

@@ -1,5 +1,7 @@
 import { login, logout, getUserInfo } from '@/api/user'
 import { setToken, getToken } from '@/libs/util'
+import { getContractList } from '@/api/accounting-form'
+import { router } from '@/router'
 
 export default {
   state: {
@@ -66,11 +68,16 @@ export default {
         getUserInfo(state.token).then(res => {
           const data = res.data
           commit('setAvator', data.avator)
-          commit('setUserName', data.user_name)
-          commit('setUserId', data.user_id)
+          commit('setUserName', data.userName)
+          commit('setUserId', data.userId)
           commit('setAccess', data.access)
           resolve(data)
         }).catch(err => {
+          if (err.response && err.response.status === 401) {
+            commit('setToken', '')
+            window.location.href = '/login'
+            return
+          }
           reject(err)
         })
       })

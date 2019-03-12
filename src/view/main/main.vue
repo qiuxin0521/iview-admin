@@ -41,8 +41,8 @@ import Fullscreen from './components/fullscreen'
 import Language from './components/language'
 import { mapMutations, mapActions } from 'vuex'
 import { getNewTagList, getNextRoute, routeEqual } from '@/libs/util'
-import minLogo from '@/assets/images/logo-min.jpg'
-import maxLogo from '@/assets/images/logo.jpg'
+import minLogo from '@/assets/images/siriusangel-logo-min.png'
+import maxLogo from '@/assets/images/siriusangel-logo.png'
 import './main.less'
 export default {
   name: 'Main',
@@ -152,7 +152,7 @@ export default {
     // 设置初始语言
     this.setLocal(this.$i18n.locale)
     // 文档提示
-    this.$Notice.info({
+    /* this.$Notice.info({
       title: '想快速上手，去看文档吧',
       duration: 0,
       render: (h) => {
@@ -171,7 +171,7 @@ export default {
           '快速查看'
         ])
       }
-    })
+    }) */
   }
 }
 </script>

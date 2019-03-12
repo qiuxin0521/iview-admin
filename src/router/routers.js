@@ -44,6 +44,108 @@ export default [
     ]
   },
   {
+    path: '/loan_cost_accounting',
+    name: 'loan_cost_accounting',
+    meta: {
+      icon: 'logo-buffer',
+      title: '外购货物成本核算'
+    },
+    component: Main,
+    children: [
+      {
+        path: 'form',
+        name: 'cost_accounting_form',
+        meta: {
+          icon: 'md-trending-up',
+          title: '成本核算表单'
+        },
+        component: () => import('@/view/loan-cost-accounting/cost-accounting-form/cost-accounting-form.vue')
+      },
+      {
+        path: 'config',
+        name: 'cost_accounting_config',
+        meta: {
+          icon: 'ios-hammer',
+          title: '配置',
+          hideInMenu: true,
+        },
+        component: () => import('@/view/loan-cost-accounting/cost-accounting-config/cost-accounting-config.vue')
+      },
+      {
+        path: 'user_config',
+        name: 'user_config',
+        meta: {
+          icon: 'ios-hammer',
+          title: '用户配置'
+        },
+        component: () => import('@/view/loan-cost-accounting/user-config/user-config.vue')
+      },
+      {
+        path: 'add_contract',
+        name: 'add_contract',
+        meta: {
+          icon: 'md-add-circle',
+          title: '增加合同',
+          hideInMenu: true,
+          notCache: true,
+          parentName: 'cost_accounting_form'
+        },
+        component: () => import('@/view/loan-cost-accounting/cost-accounting-form/add-contract.vue')
+      },
+      {
+        path: 'modify_contract/:contractId',
+        name: 'modify_contract',
+        meta: {
+          icon: 'md-create',
+          title: '修改合同',
+          hideInMenu: true,
+          notCache: true,
+          parentName: 'cost_accounting_form'
+        },
+        component: () => import('@/view/loan-cost-accounting/cost-accounting-form/modify-contract.vue')
+      },
+      {
+        path: 'modify_contract_detail/:contractId',
+        name: 'modify_contract_detail',
+        meta: {
+          icon: 'md-list',
+          title: '合同详情',
+          hideInMenu: true,
+          notCache: true,
+          parentName: 'cost_accounting_form'
+        },
+        component: () => import('@/view/loan-cost-accounting/cost-accounting-form/modify-contract-detail.vue')
+      }
+  ]
+  },
+  {
+    path: '/401',
+    name: 'error_401',
+    meta: {
+      hideInMenu: true
+    },
+    component: () => import('@/view/error-page/401.vue')
+  },
+  {
+    path: '/500',
+    name: 'error_500',
+    meta: {
+      hideInMenu: true
+    },
+    component: () => import('@/view/error-page/500.vue')
+  },
+  {
+    path: '*',
+    name: 'error_404',
+    meta: {
+      hideInMenu: true
+    },
+    component: () => import('@/view/error-page/404.vue')
+  }
+]
+
+/**
+ * {
     path: '',
     name: 'doc',
     meta: {
@@ -52,7 +154,7 @@ export default [
       icon: 'ios-book'
     }
   },
-  {
+ {
     path: '/join',
     name: 'join',
     component: Main,
@@ -68,7 +170,7 @@ export default [
       }
     ]
   },
-  {
+ {
     path: '/components',
     name: 'components',
     meta: {
@@ -142,7 +244,7 @@ export default [
       }
     ]
   },
-  {
+ {
     path: '/update',
     name: 'update',
     meta: {
@@ -171,7 +273,7 @@ export default [
       }
     ]
   },
-  {
+ {
     path: '/excel',
     name: 'excel',
     meta: {
@@ -200,7 +302,7 @@ export default [
       }
     ]
   },
-  {
+ {
     path: '/tools_methods',
     name: 'tools_methods',
     meta: {
@@ -219,7 +321,7 @@ export default [
       }
     ]
   },
-  {
+ {
     path: '/directive',
     name: 'directive',
     meta: {
@@ -238,7 +340,7 @@ export default [
       }
     ]
   },
-  {
+ {
     path: '/multilevel',
     name: 'multilevel',
     meta: {
@@ -289,7 +391,7 @@ export default [
       },
     ]
   },
-  {
+ {
     path: '/argu',
     name: 'argu',
     meta: {
@@ -319,28 +421,4 @@ export default [
       }
     ]
   },
-  {
-    path: '/401',
-    name: 'error_401',
-    meta: {
-      hideInMenu: true
-    },
-    component: () => import('@/view/error-page/401.vue')
-  },
-  {
-    path: '/500',
-    name: 'error_500',
-    meta: {
-      hideInMenu: true
-    },
-    component: () => import('@/view/error-page/500.vue')
-  },
-  {
-    path: '*',
-    name: 'error_404',
-    meta: {
-      hideInMenu: true
-    },
-    component: () => import('@/view/error-page/404.vue')
-  }
-]
+ */

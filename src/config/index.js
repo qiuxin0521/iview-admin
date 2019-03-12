@@ -11,9 +11,11 @@ export default {
   useI18n: false,
   /**
    * @description api请求基础路径
+   * online: http://siriusangel.net/api/
+   * dev: http://localhost/api/
    */
   baseUrl: {
     dev: 'https://www.easy-mock.com/mock/5add9213ce4d0e69998a6f51/iview-admin/',
-    pro: 'https://produce.com'
+    pro: 'http://siriusangel.net/api/'
   }
 }

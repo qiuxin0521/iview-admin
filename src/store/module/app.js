@@ -19,6 +19,8 @@ export default {
         state.tagNavList = [...list]
         setTagNavListInLocalstorage([...list])
       } else state.tagNavList = getTagNavListFromLocalstorage()
+
+      document.body.scrollLeft = document.body.scrollTop = 0
     },
     addTag (state, { route, type = 'unshift' }) {
       if (!routeHasExist(state.tagNavList, route)) {
@@ -29,6 +31,8 @@ export default {
         }
         setTagNavListInLocalstorage([...state.tagNavList])
       }
+
+      document.body.scrollLeft = document.body.scrollTop = 0
     },
     setLocal (state, lang) {
       state.local = lang
